@@ -149,6 +149,11 @@ const styles = StyleSheet.create({
   },
   cardstyle: {
       margin:15,
+      backgroundColor: "#eff7f4",
+      borderRadius:15,
+
+      
+
   },
   
   lineStyle:{

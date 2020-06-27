@@ -18,7 +18,7 @@ const { width, height } = Dimensions.get("window");
 
 export default class ResultDetails extends Component {
   state = {
-   
+
   };
 
 
@@ -46,11 +46,9 @@ export default class ResultDetails extends Component {
     return (
       
       <ScrollView showsVerticalScrollIndicator={false}>
-          
-          
-            
+               
         <View style={styles.Container}>
-        <Image source={require('../assets/elements/homework.png')} />
+        <Image source={require('../assets/elements/progress.png')} />
         <Text h2 center light>
             Result Details
           </Text>
@@ -58,10 +56,14 @@ export default class ResultDetails extends Component {
 
         <ScrollView style={{ marginVertical: theme.sizes.padding }}>
 
-        <Card style={styles.cardstyle} left middle shadow>
-    <Text style={{ fontSize:19 }}>Click for Fullview:{'\n'}</Text> 
-       <Image style={styles.result} source={require('../assets/elements/reportcard.jpg')} />
-        </Card>
+              <Card style={styles.cardstyle} left middle shadow>
+              <Text style={{ fontSize:19 }}>Click for Fullview:{'\n'}</Text> 
+
+              <TouchableOpacity onPress={() => navigation.navigate("ImageView")}>
+                 <Image style={styles.result} source={require('../assets/elements/reportcard.jpg')} />
+              </TouchableOpacity>
+
+              </Card>
 
           <Card style={styles.cardstyle} left middle shadow>
                 <Text
@@ -70,30 +72,11 @@ export default class ResultDetails extends Component {
                     height={24}
                     style={{ fontSize:19 }}
                     >
-                    <Text bold style={{ fontSize:19 }}>Remarks:</Text>{"\n"}
+                    <Text bold style={{ fontSize:19, textAlign: 'justify' }}>Remarks:</Text>{"\n"}
                     Student have done so good in Maths. Students should focus much on English as well. Overall the performance is good.
                 </Text>
-          </Card>   
-
-          <Block padding={[0, theme.sizes.base * 10]}>
-          <Button style={styles.shadow} gradient onPress={() => this.props.navigation.goBack()} >
-                <Text bold white center>
-                  GOT IT
-                </Text>
-            </Button>
-         </Block>
-          
+          </Card>       
           </ScrollView>
-
-
-
-         
-
-          
-          
-        
-       
-                    
       </ScrollView>
     );
   }
@@ -127,7 +110,10 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   cardstyle: {
-      margin:15,
+      margin:19,
+      backgroundColor: "#eff7f4",
+      borderRadius:15,
+
   },
   result:{
       height:width/2,
@@ -144,9 +130,7 @@ const styles = StyleSheet.create({
     margin:5,
     fontSize: 19,
   },
-  cardstyle: {
-    margin:15,
-},
+
 
 
 });

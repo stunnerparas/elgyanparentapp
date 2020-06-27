@@ -1,27 +1,44 @@
 import React, { Component } from "react";
 import {
-  Alert,
   ActivityIndicator,
   Keyboard,
   KeyboardAvoidingView,
-  StyleSheet
+  StyleSheet,
+  Image,
+  ScrollView,
+  Dimensions,
+  TouchableOpacity,
 } from "react-native";
+const { width } = Dimensions.get("window");
 
+
+import { Card } from "../components";
 import { Button, Block, Input, Text } from "../components";
 import { theme } from "../constants";
 
 const VALID_EMAIL = "contact@react-ui-kit.com";
+const VALID_PASSWORD = "subscribe";
 
-export default class Forgot extends Component {
+
+export default class Login extends Component {
   state = {
     email: VALID_EMAIL,
+    password: VALID_PASSWORD,
     errors: [],
-    loading: false
+    loading: false,
   };
+  
+  static navigationOptions = () => ({
+    title: 'Forgot Password',
+    headerTintColor: 'white',
+    headerStyle: {
+      backgroundColor: '#2BDA8E'
+    },
+  });
 
-  handleForgot() {
+  handleLogin() {
     const { navigation } = this.props;
-    const { email } = this.state;
+    const { email, password } = this.state;
     const errors = [];
 
     Keyboard.dismiss();
@@ -31,90 +48,152 @@ export default class Forgot extends Component {
     if (email !== VALID_EMAIL) {
       errors.push("email");
     }
+    if (password !== VALID_PASSWORD) {
+      errors.push("password");
+    }
 
     this.setState({ errors, loading: false });
 
     if (!errors.length) {
-      Alert.alert(
-        "Password sent!",
-        "Please check you email.",
-        [
-          {
-            text: "OK",
-            onPress: () => {
-              navigation.navigate("Login");
-            }
-          }
-        ],
-        { cancelable: false }
-      );
-    } else {
-      Alert.alert(
-        "Error",
-        "Please check you Email address.",
-        [{ text: "Try again" }],
-        { cancelable: false }
-      );
+      navigation.navigate("Browse");
+    }
+    if(errors.length)
+    {
+      alert("Invalid username/password combination !")
     }
   }
 
   render() {
     const { navigation } = this.props;
     const { loading, errors } = this.state;
-    const hasErrors = key => (errors.includes(key) ? styles.hasErrors : null);
+    const hasErrors = key => (errors.includes(key) ? styles.s : null);
+    
 
     return (
-      <KeyboardAvoidingView style={styles.forgot} behavior="padding">
-        <Block padding={[0, theme.sizes.base * 2]}>
-          <Text h1 bold>
-            Forgot
-          </Text>
+      <ScrollView style={{ marginVertical: theme.sizes.padding,backgroundColor: "#eff7f4" }} >
+      <KeyboardAvoidingView style={styles.login} >
+    
+
+         
+        <Card style={styles.cardstyle}>  
+
+        <Block style= {styles.logoblock}> 
+   
+         <Image  style= {styles.logoimage} source={require('../assets/loginicon.png')}
+         />     
+          </Block>
+
+        <Block padding={[0, theme.sizes.base * 0.6]}>
           <Block middle>
-            <Input
-              label="Email"
-              error={hasErrors("email")}
-              style={[styles.input, hasErrors("email")]}
-              defaultValue={this.state.email}
-              onChangeText={text => this.setState({ email: text })}
+         
+
+            <Input  
+              placeholder="Phone Number"
+              placeholderTextColor="gray"
+              error={hasErrors("phone_number")}
+              style={[styles.textInput, hasErrors("phone_number")]}
+              onChangeText={text => this.setState({ phone_number: text })}
             />
-            <Button gradient onPress={() => this.handleForgot()}>
+
+          
+           
+            <Text>{"\n"}</Text>
+
+            <Button  style={styles.loginbutton} gradient >
               {loading ? (
                 <ActivityIndicator size="small" color="white" />
               ) : (
                 <Text bold white center>
-                  Forgot
+                  Request Admin
                 </Text>
               )}
             </Button>
 
-            <Button onPress={() => navigation.navigate("Login")}>
-              <Text
-                gray
-                caption
-                center
-                style={{ textDecorationLine: "underline" }}
-              >
-                Back to Login
-              </Text>
-            </Button>
+           
           </Block>
         </Block>
+        </Card>
+        <TouchableOpacity onPress={() => navigation.navigate("AboutForgot")}>
+        <Text
+          gray
+          caption
+          center
+          style={{fontSize:19,}}
+          
+        >
+          {"\n"}
+          What's all this? Help !
+        </Text>
+        </TouchableOpacity>
+  
       </KeyboardAvoidingView>
+        </ScrollView>
+
     );
   }
 }
 
+
+
+
 const styles = StyleSheet.create({
-  forgot: {
+  login: {
     flex: 1,
     justifyContent: "center"
   },
+  logoblock: {
+    justifyContent: 'center',
+        alignItems: 'center', 
+        
+  },
+  logoimage: {
+        width: width * 0.4, 
+        height: width * 0.5 * 0.7,
+        
+  },
+
+  loginbutton: {
+  
+    borderRadius: 25,
+    margin:5,
+  },
+  
+  textInput: {
+    flex: 1,
+    marginTop: Platform.OS === 'ios' ? 0 : -12,
+    paddingLeft: 10,
+    borderRadius: 25,
+    backgroundColor:'#F2F2F2',
+
+   },
+
   input: {
-    borderRadius: 0,
-    borderWidth: 0,
     borderBottomColor: theme.colors.gray2,
     borderBottomWidth: StyleSheet.hairlineWidth
   },
+  cardstyle: {
+    margin:24,
+    shadowColor: 'black',
+    shadowOpacity: 3,
+    elevation:9,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 25, height: 13},
+    borderRadius: 15,
+  },
+  elgyan:
+  {
+    fontSize:17,
+    margin:50,
+  },
+  
+
+image: {
+  flex: 1,
+  resizeMode: "cover",
+  justifyContent: "center",
+},
+
+
   hasErrors: {
     borderBottomColor: theme.colors.accent
   }

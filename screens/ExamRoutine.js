@@ -141,7 +141,11 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   cardstyle: {
-      margin:8,
+      margin:15,
+      backgroundColor: "#eff7f4",
+      borderRadius:15,
+
+
   },
   
   lineStyle:{

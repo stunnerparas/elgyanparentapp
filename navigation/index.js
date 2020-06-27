@@ -6,10 +6,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import Welcome from "../screens/Welcome";
 import Login from "../screens/Login";
 import Forgot from "../screens/Forgot";
-import Explore from "../screens/Explore";
 import Browse from "../screens/Browse";
-import Product from "../screens/Product";
-import Settings from "../screens/Settings";
 import Profile from "../screens/Profile";
 import Attendance from "../screens/Attendance";
 import ClassRoutine from "../screens/ClassRoutine";
@@ -24,6 +21,13 @@ import ProjectWork from "../screens/ProjectWork";
 import ProjectDetails from "../screens/ProjectDetails";
 import Library from "../screens/Library";
 import Suggestion from "../screens/Suggestion";
+import AboutForgot from "../screens/AboutForgot";
+import SchoolDetails from "../screens/SchoolDetails";
+import DueDetails from "../screens/DueDetails";
+import BusDetails from "../screens/BusDetails";
+import BusRoute from "../screens/BusRoute";
+import ImageView from "../screens/ImageView";
+
 
 
 import { theme } from "../constants";
@@ -33,10 +37,7 @@ const screens = createStackNavigator(
     Welcome,
     Login,
     Forgot,
-    Explore,
     Browse,
-    Product,
-    Settings,
     Profile,
     Attendance,
     ClassRoutine,
@@ -51,6 +52,12 @@ const screens = createStackNavigator(
     ProjectDetails,
     Library,
     Suggestion,
+    AboutForgot,
+    SchoolDetails,
+    DueDetails,
+    BusDetails,
+    BusRoute,
+    ImageView,
   },
   {
     headerLayoutPreset: 'center',

@@ -57,36 +57,32 @@ export default class Library extends Component {
         </View>
 
 
-          <Card style={styles.cardstyle} left middle shadow>
+          <Card style={styles.borrowcardstyle} left middle shadow>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Date of borrow:</Text>  2020/05/11</Text>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Date to return:</Text>  2020/05/19</Text>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Name of book:</Text>  The Alchemist</Text>
           </Card>
-          <Card style={styles.cardstyle} left middle shadow>
+          <Card style={styles.borrowcardstyle} left middle shadow>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Date of borrow:</Text>  2020/05/11</Text>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Date to return:</Text>  2020/05/19</Text>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Name of book:</Text>  3 mistake of my life</Text>
           </Card>
-          <Card style={styles.cardstyle} left middle shadow>
+          <Card style={styles.borrowcardstyle} left middle shadow>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Date of borrow:</Text>  2020/05/11</Text>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Date to return:</Text>  2020/05/19</Text>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Name of book:</Text>  One night of Call center</Text>
           </Card>
-          <Card style={styles.cardstyle} left middle shadow>
+          <Card style={styles.returncardstyle} left middle shadow>
+              <Text  caption   style={styles.portfolio}><Text style={styles.portfolio} bold>Returned:</Text> The book named Palpasa cafe has been returned as of date :2020/05/15.</Text>
+          </Card>
+          <Card style={styles.borrowcardstyle} left middle shadow>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Date of borrow:</Text>  2020/05/11</Text>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Date to return:</Text>  2020/05/19</Text>
               <Text  caption   style={styles.portfolio}><Text bold style={styles.portfolio}>Name of book:</Text>  Palpasa Cafe</Text>
           </Card>
          
 
-          
-         <Block padding={[0, theme.sizes.base * 10]}>
-          <Button style={styles.shadow} gradient onPress={() => this.props.navigation.goBack()} >
-                <Text bold white center>
-                  GOT IT
-                </Text>
-            </Button>
-         </Block>
+         
        
                     
       </ScrollView>
@@ -120,10 +116,16 @@ const styles = StyleSheet.create({
     elevation:3,
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
+    
   },
-  cardstyle: {
+  borrowcardstyle: {
       margin:15,
+      backgroundColor: "#eff7f4",
+      borderRadius:15,
   },
+  returncardstyle: {
+    margin:15,
+},
   
   lineStyle:{
     borderWidth: 0.2,
@@ -131,6 +133,7 @@ const styles = StyleSheet.create({
     margin:10,
     
   },
+  
 
 
 });

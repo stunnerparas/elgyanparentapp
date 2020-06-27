@@ -230,19 +230,31 @@ class Welcome extends Component {
       
         <Block center middle>
         <Text h1 center>{"\n"}</Text>  
-        <Text h1 center>Login and get Started{"\n"}</Text>   
+        <Text h1 center>Welcome !{"\n"}</Text>   
  
           {this.renderIllustrations()}
         </Block>
-        <Block middle flex={0.9} margin={[0, theme.sizes.padding * 1.6]}>
-          <Button style={styles.shadow} gradient onPress={() => navigation.navigate("Login")}>
-            <Text center semibold white>
-              LOGIN
+        <Block middle flex={0.9} margin={[0, theme.sizes.padding * 3]}>
+          <Button style={styles.button} gradient onPress={() => navigation.navigate("Login")}>
+          <Text
+               white
+                caption
+                center
+                style={{fontSize:17,}}
+              >
+             Let's Get Started !  >>
             </Text>
           </Button>
-          <Button style={styles.shadow} onPress={() => this.setState({ showTerms: true })}>
-            <Text center caption gray>
-              TERMS OF SERVICE
+         <Text>{"\n"}</Text>
+          <Button style={styles.button} onPress={() => this.setState({ showTerms: true })}>
+          <Text
+                gray
+                caption
+                center
+                style={{fontSize:17,}}
+                
+              >
+              Terms Of Service
             </Text>
           </Button>
         </Block>
@@ -264,13 +276,7 @@ export default Welcome;
 
 const styles = StyleSheet.create({
 
-  shadow: {
-    shadowColor: 'black',
-    shadowOpacity: 5,
-    elevation:3,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
-  },
+  
   stepsContainer: {
     position: "absolute",
     bottom: theme.sizes.base * 3,
@@ -287,6 +293,12 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center"
+  },
+  button: {
+  
+    borderRadius: 25,
+    shadowOpacity: 1,
+    elevation:6,
   },
 
   

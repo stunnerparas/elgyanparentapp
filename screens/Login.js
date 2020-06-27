@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,
   Dimensions,
-  ImageBackground,
+  TouchableOpacity,
 } from "react-native";
 const { width } = Dimensions.get("window");
 
@@ -91,7 +91,7 @@ export default class Login extends Component {
           <Block middle>
             <Input  
               placeholder="Username or Email"
-              placeholderTextColor="#8FE7C1"
+              placeholderTextColor="gray"
               error={hasErrors("email")}
               style={[styles.textInput, hasErrors("email")]}
               defaultValue={this.state.email}
@@ -99,7 +99,7 @@ export default class Login extends Component {
             />
             <Input 
               placeholder="Password"
-              placeholderTextColor="#8FE7C1"
+              placeholderTextColor="gray"
               secureTextEntry={true}
               error={hasErrors("password")}
               style={[styles.textInput, hasErrors("password")]}
@@ -122,9 +122,22 @@ export default class Login extends Component {
           </Block>
         </Block>
         </Card>
+        <TouchableOpacity onPress={() => navigation.navigate("Forgot")}>
+
+              <Text
+                gray
+                caption
+                center
+                style={{fontSize:17,}}
+                
+              >
+                Forgot password? Click Here
+              </Text>
+        </TouchableOpacity>
         <Text style={styles.elgyan} center h2 light>
             Powered By Elgyan
           </Text>
+
        
       </KeyboardAvoidingView>
         </ScrollView>

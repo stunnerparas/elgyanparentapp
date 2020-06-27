@@ -52,7 +52,7 @@ export default class HomeworkDetails extends Component {
             
         <View style={styles.Container}>
         <Image source={require('../assets/elements/homework.png')} />
-        <Text h2 center light>
+        <Text h2 center >
             Homework Details
           </Text>
         </View>
@@ -67,36 +67,19 @@ export default class HomeworkDetails extends Component {
         </Card>
 
           <Card style={styles.cardstyle} left middle shadow>
+          <Text caption bold style={styles.header}>Homework Description{"\n"}</Text>
                 <Text
                     caption
                     gray
                     height={24}
-                    style={{ fontSize:19 }}
+                    style={{ fontSize:19, textAlign: 'justify',}}
                     >
                     Students should write the question answer of Chapter 1 and also complete the numerical of chapter 2.
                     Students should write the question answer of Chapter 2 and also complete the Essay.
                 </Text>
           </Card>   
 
-          <Block padding={[0, theme.sizes.base * 10]}>
-          <Button style={styles.shadow} gradient onPress={() => this.props.navigation.goBack()} >
-                <Text bold white center>
-                  GOT IT
-                </Text>
-            </Button>
-         </Block>
-          
-          </ScrollView>
-
-
-
-         
-
-          
-          
-        
-       
-                    
+          </ScrollView>              
       </ScrollView>
     );
   }
@@ -130,13 +113,18 @@ const styles = StyleSheet.create({
   },
   cardstyle: {
       margin:15,
+      backgroundColor: "#eff7f4"
   },
   
   lineStyle:{
     borderWidth: 0.2,
     borderColor:'black',
-    margin:10,
-    
+    margin:10,  
+  },
+  header: {
+    fontSize: 19,
+    margin:5,
+    textDecorationLine: 'underline',
   },
   homeworkdetails:{
     margin:10,

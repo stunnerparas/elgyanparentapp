@@ -48,72 +48,52 @@ export default class Attendance extends Component {
 
 
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
           </Card>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
           </Card>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
           </Card>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
           </Card>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
-          </Card>
+          </Card> 
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
-          </Card>
+          </Card> 
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
-          </Card>
+          </Card> 
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
-          </Card>
+          </Card> 
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
-          </Card>
+          </Card> 
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
-              Please call the school or submit absent letter.</Text>
-
-          </Card>
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
-              Please call the school or submit absent letter.</Text>
-
-          </Card>
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
-              Please call the school or submit absent letter.</Text>
-
-          </Card>
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
-              Please call the school or submit absent letter.</Text>
-
-          </Card>
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption gray2  style={styles.portfolio}><Text bold>2020/05/20-</Text> Student name is recorded as absent as of record of school attendance. 
+              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
 
           </Card>
@@ -153,6 +133,8 @@ const styles = StyleSheet.create({
   },
   cardstyle: {
       margin:15,
+      backgroundColor: "#eff7f4",
+      borderRadius:15,
   },
   
   lineStyle:{

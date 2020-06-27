@@ -71,7 +71,7 @@ export default class ProjectDetails extends Component {
                     caption
                     gray
                     height={24}
-                    style={{ fontSize:19 }}
+                    style={{ fontSize:19, textAlign: 'justify', }}
                     >
                     <Text
                     caption
@@ -86,13 +86,7 @@ export default class ProjectDetails extends Component {
                 </Text>
           </Card>   
 
-          <Block padding={[0, theme.sizes.base * 10]}>
-          <Button style={styles.shadow} gradient onPress={() => this.props.navigation.goBack()} >
-                <Text bold white center>
-                  GOT IT
-                </Text>
-            </Button>
-         </Block>
+
           
           </ScrollView>
 
@@ -139,6 +133,9 @@ const styles = StyleSheet.create({
   },
   cardstyle: {
       margin:15,
+      backgroundColor: "#eff7f4",
+      borderRadius:15,
+
   },
   
   lineStyle:{
@@ -151,9 +148,7 @@ const styles = StyleSheet.create({
     margin:5,
     fontSize: 19,
   },
-  cardstyle: {
-    margin:15,
-},
+  
 
 
 });

@@ -5,7 +5,8 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  BackHandler 
+  BackHandler,
+  View
 } from "react-native";
 
 
@@ -51,20 +52,21 @@ class Browse extends Component {
           showsVerticalScrollIndicator={false}
           style={{ paddingVertical: theme.sizes.base * 2 }}
         >
+          <View style={styles.Container}>
+
+          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+            <Image
+              source={require("../assets/elements/profile-pic.jpg")} 
+              style={styles.circleImageLayout}
+            />
+         </TouchableOpacity>
+
+            <Text style={styles.text}>Robert Downey Jr.</Text>
+          </View>
          
-          <Block style = {styles.lineStyle}></Block>
 
           <Block flex={false} row space="between" style={styles.categories}>
-            
-              <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-                <Card  center middle shadow style={styles.category}>    
-                    <Image source={require('../assets/elements/profile.png')} />
-                  <Text  height={20}>
-                    Profile
-                  </Text>
-                </Card>
-              </TouchableOpacity>
-               
+                           
               <TouchableOpacity onPress={() => navigation.navigate("Attendance")}>
 
                 <Card center middle shadow style={styles.category}>
@@ -152,7 +154,7 @@ class Browse extends Component {
                 </Card>
               </TouchableOpacity>
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("SchoolDetails")}>
                 <Card center middle shadow style={styles.category}>
                
                     <Image source={require('../assets/elements/school.png')} />
@@ -172,9 +174,8 @@ class Browse extends Component {
                 </Card>
               </TouchableOpacity>
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("DueDetails")}>
                 <Card center middle shadow style={styles.category}>
-               
                     <Image source={require('../assets/elements/dues.png')} />
                   <Text  height={20}>
                     Dues
@@ -182,7 +183,7 @@ class Browse extends Component {
                 </Card>
               </TouchableOpacity>
 
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("BusDetails")}>
                 <Card center middle shadow style={styles.category}>
                
                     <Image source={require('../assets/elements/bus.png')} />
@@ -191,6 +192,16 @@ class Browse extends Component {
                   </Text>
                 </Card>
               </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                <Card  center middle shadow style={styles.category}>    
+                    <Image source={require('../assets/elements/profile.png')} />
+                  <Text  height={20}>
+                    Profile
+                  </Text>
+                </Card>
+              </TouchableOpacity>
+              
         
           </Block>
         </ScrollView>
@@ -208,7 +219,19 @@ export default Browse;
 
 
 const styles = StyleSheet.create({
+  Container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    margin: 10,
 
+  },
+
+  circleImageLayout: {
+    width: 90,
+    height: 90,
+    borderRadius: 200 / 2
+  },
 
   lineStyle:{
     borderWidth: 0.2,
@@ -232,6 +255,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: theme.sizes.base * 2,
     marginBottom: theme.sizes.base * 3.5
     
+  },
+  text: {
+    fontSize: 15,
+    textAlign: 'center',
+    margin: 10
   },
   
 

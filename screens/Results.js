@@ -32,7 +32,7 @@ export default class Result extends Component {
   };
 
   static navigationOptions = () => ({
-    title: 'Routine',
+    title: 'Result',
     headerTintColor: 'white',
     headerStyle: {
       backgroundColor: '#2BDA8E'
@@ -172,6 +172,9 @@ const styles = StyleSheet.create({
   },
   cardstyle: {
       margin:15,
+      backgroundColor: "#eff7f4",
+      borderRadius:15,
+
   },
   
   lineStyle:{

@@ -1,36 +1,35 @@
 import React, { Component } from "react";
+import { TextInput } from 'react-native';
 import {
-  Dimensions,
-  Image,
+  ActivityIndicator,
+  Keyboard,
+  KeyboardAvoidingView,
   StyleSheet,
+  Image,
   ScrollView,
-  TouchableOpacity,
-  SafeAreaView,
+  Dimensions,
   View,
+  TouchableOpacity,
 } from "react-native";
+const { width } = Dimensions.get("window");
 
 
+import { Card } from "../components";
+import { Button, Block, Input, Text } from "../components";
+import { theme } from "../constants";
 
-import { Card, Badge, Button, Block, Text } from "../components";
-import { theme, mocks } from "../constants";
+const VALID_EMAIL = "contact@react-ui-kit.com";
+const VALID_PASSWORD = "subscribe";
 
-const { width, height } = Dimensions.get("window");
 
-export default class Suggestion extends Component {
+export default class Login extends Component {
   state = {
-   
+    email: VALID_EMAIL,
+    password: VALID_PASSWORD,
+    errors: [],
+    loading: false
   };
-
-
-  handleTab = tab => {
-    const { categories } = this.props;
-    const filtered = categories.filter(category =>
-      category.tags.includes(tab.toLowerCase())
-    );
-
-    this.setState({ active: tab, categories: filtered });
-  };
-
+  
   static navigationOptions = () => ({
     title: 'Suggestion',
     headerTintColor: 'white',
@@ -38,79 +37,159 @@ export default class Suggestion extends Component {
       backgroundColor: '#2BDA8E'
     },
   });
+  handleLogin() {
+    const { navigation } = this.props;
+    const { email, password } = this.state;
+    const errors = [];
 
+    Keyboard.dismiss();
+    this.setState({ loading: true });
+
+
+    this.setState({ errors, loading: false });
+
+
+  }
 
   render() {
-    const { profile, navigation } = this.props;
+    const { navigation } = this.props;
+    const { loading, errors } = this.state;
+    const hasErrors = key => (errors.includes(key) ? styles.s : null);
+    
 
     return (
+      <ScrollView style={{ marginVertical: theme.sizes.padding,backgroundColor: "#eff7f4" }} >
+      <KeyboardAvoidingView style={styles.login} >
       
-      <ScrollView style={{ marginVertical: theme.sizes.padding }}  showsVerticalScrollIndicator={true}>
-          
-          <View style={styles.Container}>
-            <Image
-              source={require("../assets/elements/profile-pic.jpg")} 
-              style={styles.circleImageLayout}
-            />
-            <Text style={styles.text}>Robert Downey Jr.</Text>
-          </View>
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption  style={styles.portfolio}>Class name:  Class 8 Sec A </Text>
-              <Text  caption  style={styles.portfolio}>Father name: Michael Downy Jr.  </Text>
-              <Text  caption  style={styles.portfolio}>Mother name:  Nebula Downy </Text>
-              <Text  caption  style={styles.portfolio}>Guardian name:  N/A </Text>
-              <Text  caption  style={styles.portfolio}>Blood Group:   B positive </Text>
-              <Text  caption  style={styles.portfolio}>Current Address:  Sunsity, Kathmandu </Text>
-              <Text  caption  style={styles.portfolio}>Date of Birth:  1996/04/25 </Text>
+        <Card style={styles.cardstyle}>  
 
-          </Card>
-          <Block padding={[0, theme.sizes.base * 10]}>
-          <Button style={styles.shadow} gradient onPress={() => this.props.navigation.goBack()} >
+        <Block style= {styles.logoblock}> 
+           
+         <Text h1 center>Any Suggestion ?{"\n"}</Text>   
+          </Block>
+
+        <Block padding={[0, theme.sizes.base * 0.6]}>
+          <Block middle>
+            <Input  
+              placeholder="  Subject"
+              placeholderTextColor="gray"
+              error={hasErrors("email")}
+              style={[styles.textInput, hasErrors("email")]}
+              onChangeText={text => this.setState({ email: text })}
+            />
+            <Text>{"\n"}</Text>
+  
+          <View style={styles.textAreaContainer} >
+            <TextInput
+              style={styles.textArea}
+              placeholder="  Write Something..."
+              placeholderTextColor="gray"
+              numberOfLines={6}
+              multiline={true}
+            />
+          </View>
+
+            <Text>{"\n"}</Text>
+
+            <Button  style={styles.loginbutton} gradient>
+              {loading ? (
+                <ActivityIndicator size="small" color="white" />
+              ) : (
                 <Text bold white center>
-                  GOT IT
+                  Submit
                 </Text>
+              )}
             </Button>
-         </Block>
+
+           
+          </Block>
+        </Block>
+        </Card>
+      
+
        
-                    
-      </ScrollView>
+      </KeyboardAvoidingView>
+        </ScrollView>
+
     );
   }
 }
 
 
+
+
 const styles = StyleSheet.create({
-  Container: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  login: {
     flex: 1,
-    margin: 10
+    justifyContent: "center"
   },
+  logoblock: {
+    justifyContent: 'center',
+        alignItems: 'center', 
+        
+  },
+  logoimage: {
+        width: width * 0.1, 
+        height: width * 0.5 * 0.2,
+        
+  },
+ 
 
-  circleImageLayout: {
-    width: 110,
-    height: 110,
-    borderRadius: 200 / 2
+  loginbutton: {
+  
+    borderRadius: 25,
+    margin:5,
   },
+  
+  textInput: {
+    flex: 1,
+    marginTop: Platform.OS === 'ios' ? 0 : -12,
+    paddingLeft: 10,
+    borderRadius: 25,
+    backgroundColor:'#F2F2F2',
 
-  text: {
-    fontSize: 25,
-    textAlign: 'center',
-    margin: 30
-  },
-  portfolio: {
-    fontSize: 19,
-    margin:8,
-  },
-  shadow: {
-    shadowColor: 'black',
-    shadowOpacity: 5,
-    elevation:3,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
+   },
+
+  input: {
+    borderBottomColor: theme.colors.gray2,
+    borderBottomWidth: StyleSheet.hairlineWidth
   },
   cardstyle: {
-    margin:15,
+    margin:24,
+    shadowColor: 'black',
+    shadowOpacity: 3,
+    elevation:9,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 25, height: 13},
+    borderRadius: 15,
+  },
+  elgyan:
+  {
+    fontSize:17,
+    margin:50,
+  },
+  textAreaContainer: {
+    padding: 3
+  },
+  textArea: {
+    flex: 1,
+    height: 120,
+    justifyContent: "flex-start",
+    backgroundColor:'#F2F2F2',
+    borderRadius: 15,
+    flex: 1,
+    borderWidth: 0.2,
+  },
+  
+
+image: {
+  flex: 1,
+  resizeMode: "cover",
+  justifyContent: "center",
 },
 
+
+  hasErrors: {
+    borderBottomColor: theme.colors.accent
+  }
 });

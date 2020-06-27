@@ -58,15 +58,7 @@ export default class Profile extends Component {
               <Text  caption  style={styles.portfolio}>Date of Birth:  1996/04/25 </Text>
 
           </Card>
-          <Block padding={[0, theme.sizes.base * 10]}>
-          <Button style={styles.shadow} gradient onPress={() => this.props.navigation.goBack()} >
-                <Text bold white center>
-                  GOT IT
-                </Text>
-            </Button>
-         </Block>
-       
-                    
+                   
       </ScrollView>
     );
   }
@@ -107,5 +99,8 @@ const styles = StyleSheet.create({
   },
   cardstyle: {
     margin:15,
+    backgroundColor: "#eff7f4",
+    borderRadius:15,
+
 },
 });
