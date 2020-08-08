@@ -27,10 +27,11 @@ import DueDetails from "../screens/DueDetails";
 import BusDetails from "../screens/BusDetails";
 import BusRoute from "../screens/BusRoute";
 import ImageView from "../screens/ImageView";
-
-
-
-import { theme } from "../constants";
+import AbsentDetails from "../screens/AbsentDetails";
+import Leave from "../screens/Leave";
+import Notification from "../screens/Notification";
+import NotificationDetails from "../screens/NotificationDetails";
+import AboutApp from "../screens/AboutApp";
 
 const screens = createStackNavigator(
   {
@@ -58,6 +59,11 @@ const screens = createStackNavigator(
     BusDetails,
     BusRoute,
     ImageView,
+    AbsentDetails,
+    Leave,
+    Notification,
+    NotificationDetails,
+    AboutApp,
   },
   {
     headerLayoutPreset: 'center',

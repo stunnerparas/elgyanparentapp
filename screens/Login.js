@@ -68,15 +68,11 @@ export default class Login extends Component {
       <ScrollView style={{ marginVertical: theme.sizes.padding,backgroundColor: "#eff7f4" }} >
       <KeyboardAvoidingView style={styles.login} >
         
-        <Block center bottom flex={0.4}>
           <Text h1 center bold>
           {"\n"}
-          <Text h2 light>
-           
-          </Text>
+        
           </Text>
           
-        </Block>
 
          
         <Card style={styles.cardstyle}>  
@@ -84,7 +80,8 @@ export default class Login extends Component {
         <Block style= {styles.logoblock}> 
          <Image  style= {styles.logoimage} source={require('../assets/loginicon.png')}
          />     
-         <Text h1 center>Login to Proceed{"\n"}</Text>   
+         <Text style= {styles.loginText} h1 center>Login to Proceed !</Text>   
+    <Text>{"\n"}</Text>
           </Block>
 
         <Block padding={[0, theme.sizes.base * 0.6]}>
@@ -128,16 +125,18 @@ export default class Login extends Component {
                 gray
                 caption
                 center
-                style={{fontSize:17,}}
+                style={{fontSize:15,}}
                 
               >
                 Forgot password? Click Here
               </Text>
         </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate("AboutApp")}>
         <Text style={styles.elgyan} center h2 light>
             Powered By Elgyan
           </Text>
-
+        </TouchableOpacity>
        
       </KeyboardAvoidingView>
         </ScrollView>
@@ -160,15 +159,15 @@ const styles = StyleSheet.create({
         
   },
   logoimage: {
-        width: width * 0.4, 
-        height: width * 0.5 * 0.7,
+        width: width * 0.3, 
+        height: width * 0.5 * 0.5,
         
   },
 
   loginbutton: {
   
-    borderRadius: 25,
-    margin:5,
+    borderRadius: width/20,
+    margin:1,
   },
   
   textInput: {
@@ -185,7 +184,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth
   },
   cardstyle: {
-    margin:24,
+    margin:20,
     shadowColor: 'black',
     shadowOpacity: 3,
     elevation:9,
@@ -204,6 +203,9 @@ image: {
   flex: 1,
   resizeMode: "cover",
   justifyContent: "center",
+},
+loginText: {
+  fontSize: width/20,
 },
 
 

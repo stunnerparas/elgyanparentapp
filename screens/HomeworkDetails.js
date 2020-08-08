@@ -51,8 +51,8 @@ export default class HomeworkDetails extends Component {
           
             
         <View style={styles.Container}>
-        <Image source={require('../assets/elements/homework.png')} />
-        <Text h2 center >
+    <Text>{"\n"}</Text>
+        <Text style={styles.pageheader} h2 center >
             Homework Details
           </Text>
         </View>
@@ -62,22 +62,19 @@ export default class HomeworkDetails extends Component {
         <Card style={styles.cardstyle} left middle shadow>
                 <View >
                     <Text bold style={styles.homeworkdetails}>Subject Name:<Text light style={styles.homeworkdetails}> Science</Text></Text>
-                    <Text bold style={styles.homeworkdetails}>Given Date:<Text light style={styles.homeworkdetails}> 5/12</Text></Text>
+                    <Text bold style={styles.homeworkdetails}>Given Date: <Text light style={styles.homeworkdetails}>5 May, 2020</Text></Text>
+                    <Text bold style={styles.homeworkdetails}>Teacher Name: <Text light style={styles.homeworkdetails}>Paras Dahal</Text></Text>
                 </View> 
         </Card>
 
+        
           <Card style={styles.cardstyle} left middle shadow>
-          <Text caption bold style={styles.header}>Homework Description{"\n"}</Text>
-                <Text
-                    caption
-                    gray
-                    height={24}
-                    style={{ fontSize:19, textAlign: 'justify',}}
-                    >
+              <Text  caption bold style={styles.header}>Homework Description</Text>
+              <Text  caption  style={styles.aboutus}>
                     Students should write the question answer of Chapter 1 and also complete the numerical of chapter 2.
-                    Students should write the question answer of Chapter 2 and also complete the Essay.
-                </Text>
-          </Card>   
+                    Students should write the question answer of Chapter 2 and also complete the Essay
+              </Text>
+          </Card> 
 
           </ScrollView>              
       </ScrollView>
@@ -111,9 +108,16 @@ const styles = StyleSheet.create({
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
   },
-  cardstyle: {
-      margin:15,
-      backgroundColor: "#eff7f4"
+  header: {
+    fontSize: width/24,
+    margin:5,
+    textDecorationLine: 'underline',
+  },
+  aboutus: {
+    fontSize: width/28,
+    margin:2,
+    textAlign: 'justify',
+    lineHeight:30,
   },
   
   lineStyle:{
@@ -121,18 +125,24 @@ const styles = StyleSheet.create({
     borderColor:'black',
     margin:10,  
   },
-  header: {
-    fontSize: 19,
-    margin:5,
-    textDecorationLine: 'underline',
-  },
+  cardstyle: {
+    margin:15,
+    backgroundColor: "#eff7f4",
+    borderRadius:15,
+
+
+},
   homeworkdetails:{
-    margin:10,
-    fontSize: 19,
+    fontSize: width/24,
+    margin:3,
   },
   cardstyle: {
     margin:15,
 },
+pageheader:{
+  fontSize: width/23,
+},
+
 
 
 });

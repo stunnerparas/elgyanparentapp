@@ -47,13 +47,7 @@ export default class ResultDetails extends Component {
       
       <ScrollView showsVerticalScrollIndicator={false}>
                
-        <View style={styles.Container}>
-        <Image source={require('../assets/elements/progress.png')} />
-        <Text h2 center light>
-            Result Details
-          </Text>
-        </View>
-
+        
         <ScrollView style={{ marginVertical: theme.sizes.padding }}>
 
               <Card style={styles.cardstyle} left middle shadow>
@@ -72,8 +66,8 @@ export default class ResultDetails extends Component {
                     height={24}
                     style={{ fontSize:19 }}
                     >
-                    <Text bold style={{ fontSize:19, textAlign: 'justify' }}>Remarks:</Text>{"\n"}
-                    Student have done so good in Maths. Students should focus much on English as well. Overall the performance is good.
+                    <Text bold style={{ fontSize:width/21, textAlign: 'justify' }}>Remarks:{"\n"}</Text>
+                    <Text  style={{ fontSize:width/24, textAlign: 'justify' }}>Student have done so good in Maths. Students should focus much on English as well. Overall the performance is good.</Text>
                 </Text>
           </Card>       
           </ScrollView>

@@ -95,17 +95,17 @@ const styles = StyleSheet.create({
     margin: 30
   },
   portfolio: {
-    fontSize: 19,
-    margin:5,
+    fontSize: width/24,
+    margin:3,
   },
   header: {
-    fontSize: 19,
+    fontSize: width/21,
     margin:5,
     textDecorationLine: 'underline',
   },
   aboutus: {
-    fontSize: 19,
-    margin:5,
+    fontSize: width/25,
+    margin:2,
     textAlign: 'justify',
     lineHeight:30,
   },

@@ -11,12 +11,12 @@ import {
 
 
 
-import { Card, Badge, Button, Block, Text } from "../components";
-import { theme, mocks } from "../constants";
+import { Card, Text } from "../components";
+import { theme, } from "../constants";
 
 const { width, height } = Dimensions.get("window");
 
-export default class ProjectDetails extends Component {
+export default class HomeworkDetails extends Component {
   state = {
    
   };
@@ -32,12 +32,13 @@ export default class ProjectDetails extends Component {
   };
 
   static navigationOptions = () => ({
-    title: 'Project Details',
+    title: 'Project Work Details',
     headerTintColor: 'white',
     headerStyle: {
       backgroundColor: '#2BDA8E'
     },
   });
+
 
 
   render() {
@@ -50,9 +51,9 @@ export default class ProjectDetails extends Component {
           
             
         <View style={styles.Container}>
-        <Image source={require('../assets/elements/project.png')} />
-        <Text h2 center light>
-            Project Work Details
+    <Text>{"\n"}</Text>
+        <Text style={styles.pageheader} h2 center >
+            Project Work Detail
           </Text>
         </View>
 
@@ -60,50 +61,26 @@ export default class ProjectDetails extends Component {
 
         <Card style={styles.cardstyle} left middle shadow>
                 <View >
-                    <Text bold style={styles.projectdetails}>Subject name:<Text light style={styles.projectdetails}> Science</Text></Text>
-                    <Text bold style={styles.projectdetails}>Given Date:<Text light style={styles.projectdetails}> 2020/5/12</Text></Text>
-                    <Text bold style={styles.projectdetails}>Submit Date:<Text light style={styles.projectdetails}> 2020/5/16</Text></Text>
+                    <Text bold style={styles.homeworkdetails}>Subject Name:<Text light style={styles.homeworkdetails}> Science</Text></Text>
+                    <Text bold style={styles.homeworkdetails}>Given Date: <Text light style={styles.homeworkdetails}>5 May, 2020</Text></Text>
+                    <Text bold style={styles.homeworkdetails}>Title: <Text light style={styles.homeworkdetails}>Name of project title</Text></Text>
                 </View> 
         </Card>
 
-          <Card style={styles.cardstyle} left middle shadow>
-                <Text
-                    caption
-                    gray
-                    height={24}
-                    style={{ fontSize:19, textAlign: 'justify', }}
-                    >
-                    <Text
-                    caption
-                    bold
-                    height={24}
-                    style={{ fontSize:17 }}
-                    >
-                    Title of the project:{"\n"}
-                    </Text>
-                    Students should write the question answer of Chapter 1 and also complete the numerical of chapter 2.
-                    Students should write the question answer of Chapter 2 and also complete the Essay.
-                </Text>
-          </Card>   
-
-
-          
-          </ScrollView>
-
-
-
-         
-
-          
-          
         
-       
-                    
+          <Card style={styles.cardstyle} left middle shadow>
+              <Text  caption bold style={styles.header}>Project Description</Text>
+              <Text  caption  style={styles.aboutus}>
+                    Students should write the question answer of Chapter 1 and also complete the numerical of chapter 2.
+                    Students should write the question answer of Chapter 2 and also complete the Essay
+              </Text>
+          </Card> 
+
+          </ScrollView>              
       </ScrollView>
     );
   }
 }
-
 
 
 const styles = StyleSheet.create({
@@ -131,24 +108,41 @@ const styles = StyleSheet.create({
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
   },
-  cardstyle: {
-      margin:15,
-      backgroundColor: "#eff7f4",
-      borderRadius:15,
-
+  header: {
+    fontSize: width/24,
+    margin:5,
+    textDecorationLine: 'underline',
+  },
+  aboutus: {
+    fontSize: width/28,
+    margin:2,
+    textAlign: 'justify',
+    lineHeight:30,
   },
   
   lineStyle:{
     borderWidth: 0.2,
     borderColor:'black',
-    margin:10,
-    
+    margin:10,  
   },
-  projectdetails:{
-    margin:5,
-    fontSize: 19,
+  cardstyle: {
+    margin:15,
+    backgroundColor: "#eff7f4",
+    borderRadius:15,
+
+
+},
+  homeworkdetails:{
+    fontSize: width/24,
+    margin:3,
   },
-  
+  cardstyle: {
+    margin:15,
+},
+pageheader:{
+  fontSize: width/23,
+},
+
 
 
 });

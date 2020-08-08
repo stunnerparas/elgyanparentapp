@@ -1,30 +1,24 @@
 import React, { Component } from "react";
 import {
-  ActivityIndicator,
-  Keyboard,
-  KeyboardAvoidingView,
   StyleSheet,
-  Image,
   ScrollView,
   Dimensions,
-  TouchableOpacity,
 } from "react-native";
 const { width } = Dimensions.get("window");
 
 
-import { Card } from "../components";
 import { Button, Block, Input, Text } from "../components";
 import { theme } from "../constants";
 
 
 
 
-export default class Login extends Component {
+export default class AboutApp extends Component {
   state = {
 
   };
   static navigationOptions = () => ({
-    title: ' Forgot Password',
+    title: 'About the App',
     headerTintColor: 'white',
     headerStyle: {
       backgroundColor: '#2BDA8E'
@@ -45,7 +39,7 @@ export default class Login extends Component {
         space="between"
       >
         <Text h2 center light>
-         How to reset password?
+         About Us
          {"\n"}
         </Text>
 
@@ -56,20 +50,14 @@ export default class Login extends Component {
          style={{ marginBottom: theme.sizes.base }}
          style={styles.aboutForgotPassword}
          >
-         The username and password of this app is provided by the administration of the school. {"\n"}
-         Usually the student's guardian are provided  with the username and password to access the app after verifying the details.
+         Most mobile devices are sold with several apps bundled as pre-installed software, such as a web browser, email client, calendar, mapping program, and an app for buying music, other media, or more apps. Some pre-installed apps can be removed by an ordinary uninstall process, thus leaving more storage space for desired ones. Where the software does not allow this, some devices can be rooted to eliminate the undesired apps.
+
+Apps that are not preinstalled are usually available through distribution platforms called app stores. They began appearing in 2008 and are typically operated by the owner of the mobile operating system, such as the Apple App Store, Google Play, Windows Phone Store, and BlackBerry App World. However, there are independent app stores, such as Cydia, GetJar and F-Droid. Some apps are free, while others must be bought. Usually, they are downloaded from the platform to a target device, but sometimes they can be downloaded to laptops or desktop computers. For apps with a price, generally a percentage, 20-30%, goes to the distribution provider (such as iTunes), and the rest goes to the producer of the app.[3] The same app can, therefore, cost a different price depending on the mobile platform.
+
+Apps can also be installed manually, for example by running an Android application package on Android devices.
          </Text>
 
-         <Text
-         caption
-         gray
-         height={24}
-         style={{ marginBottom: theme.sizes.base }}
-         style={styles.aboutForgotPassword}
-         >
-         In case if any guardian forgot the password of the app, they are requested to provide their previous phone number 
-         so that the school can verify the parents identity and provide with the new credential to access the app.
-         </Text>
+       
          
        
 
@@ -78,9 +66,7 @@ export default class Login extends Component {
               gradient
               onPress={() => this.props.navigation.goBack()}
             >
-              <Text center white>
-                I  UNDERSTAND
-              </Text>
+              
             </Button>
           </Block>
 

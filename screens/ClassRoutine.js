@@ -15,6 +15,7 @@ import { Card, Badge, Button, Block, Text } from "../components";
 import { theme, mocks } from "../constants";
 
 const { width, height } = Dimensions.get("window");
+import { DataTable } from 'react-native-paper';
 
 export default class Attendance extends Component {
   state = {
@@ -49,18 +50,83 @@ export default class Attendance extends Component {
       <ScrollView showsVerticalScrollIndicator={false}>
           
           <View style={styles.Container}>
-          <Image source={require('../assets/elements/routine.png')} />
-          <Text h2 center light>
-            Class Routine
+          <Text style={styles.pageheader} h2 center light>
+            Sunday Class Routine
           </Text>
           </View>
+
+          <Card gradient style={styles.cardstyle} left middle shadow>
+        <DataTable>
+        <DataTable.Header >
+          <DataTable.Title ><Text style={styles.tableHeaderStyle}>Subject</Text></DataTable.Title>
+          <DataTable.Title numeric><Text style={styles.tableHeaderStyle}>Teacher</Text></DataTable.Title>
+          <DataTable.Title numeric><Text style={styles.tableHeaderStyle}>Time</Text></DataTable.Title>
+        </DataTable.Header>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Math</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>English</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Abhinash Khanal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Nepali</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Ajay Shrestha</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Science</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>EPH</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Social</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>OPT Math</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Accountancy</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+    
+
+       </DataTable>
+    </Card>
+    <View style={styles.Container}>
+          <Text style={styles.pageheader} h2 center light>
+            Routine by Days
+          </Text>
+          </View>
+
 
           <TouchableOpacity onPress={() => navigation.navigate("DayRoutine")}>
           <Card gradient style={styles.cardstyle} left middle shadow>
 
               <Text style={styles.text2}>Sunday  </Text>
              
-              <Text style={styles.time}>Starts at 9:30</Text>
+              <Text style={styles.time}>8 period</Text>
 
            
           </Card>
@@ -69,42 +135,42 @@ export default class Attendance extends Component {
          <TouchableOpacity onPress={() => navigation.navigate("DayRoutine")}>
           <Card style={styles.cardstyle} left middle shadow>
               <Text style={styles.text2}>Monday </Text>
-              <Text style={styles.time}>Starts at 9:30</Text>
+              <Text style={styles.time}>8 period</Text>
           </Card>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate("DayRoutine")}>
           <Card style={styles.cardstyle} left middle shadow>
               <Text style={styles.text2}>Tuesday </Text>
-              <Text style={styles.time}>Starts at 9:30</Text>
+              <Text style={styles.time}>8 period</Text>
           </Card>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate("DayRoutine")}>
           <Card style={styles.cardstyle} left middle shadow>
               <Text style={styles.text2}>Wednesday </Text>
-              <Text style={styles.time}>Starts at 9:30</Text>
+              <Text style={styles.time}>8 period</Text>
           </Card>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate("DayRoutine")}>
           <Card style={styles.cardstyle} left middle shadow>
               <Text style={styles.text2}>Thursday </Text>
-              <Text style={styles.time}>Starts at 9:30</Text>
+              <Text style={styles.time}>8 period</Text>
           </Card>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate("DayRoutine")}>
           <Card style={styles.cardstyle} left middle shadow>
               <Text style={styles.text2}>Friday </Text>
-              <Text style={styles.time}>Starts at 9:30</Text>
+              <Text style={styles.time}>8 period</Text>
           </Card>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate("DayRoutine")}>
           <Card style={styles.cardstyle} left middle shadow>
               <Text style={styles.text2}>Saturday </Text>
-              <Text style={styles.time}>Starts at 9:30</Text>
+              <Text style={styles.time}>8 period</Text>
           </Card>
           </TouchableOpacity>
           
@@ -121,11 +187,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    margin: 10
+    margin: 6
   },
   time:{
     color:'green',
-    fontSize: 15,
+    fontSize: width/30,
   },
 
   text: {
@@ -134,7 +200,7 @@ const styles = StyleSheet.create({
     margin: 10
   },
   text2: {
-    fontSize: 17,
+    fontSize: width/22,
   },
   text3: {
     fontSize: 18,
@@ -148,12 +214,15 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   cardstyle: {
-      margin:15,
+      margin:1,
       backgroundColor: "#eff7f4",
-      borderRadius:15,
+      
 
       
 
+  },
+  pageheader:{
+    fontSize: width/23,
   },
   
   lineStyle:{

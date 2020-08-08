@@ -4,6 +4,7 @@ import {
   Image,
   ScrollView,
   Dimensions,
+  TouchableOpacity,
   
   View,
 } from "react-native";
@@ -32,6 +33,7 @@ export default class Attendance extends Component {
 
 
   render() {
+    const { profile, navigation } = this.props;
 
     return (
       
@@ -40,63 +42,62 @@ export default class Attendance extends Component {
           
             
         <View style={styles.Container}>
-          <Image source={require('../assets/elements/attendance.png')} />
           <Text h2 center light>
-            Attendance
+            Absent History
           </Text>
         </View>
 
-
+        <TouchableOpacity onPress={() => navigation.navigate("AbsentDetails")}>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
+          <Text  caption   style={styles.portfolio}><Text style={{color:'#DF494E',}} bold>Date: 5 June, 2020</Text> {"\n"}Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
-
           </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("AbsentDetails")}>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
+          <Text  caption   style={styles.portfolio}><Text style={{color:'#DF494E',}} bold>Date: 5 June, 2020</Text> {"\n"}Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
-
           </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("AbsentDetails")}>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
+          <Text  caption   style={styles.portfolio}><Text style={{color:'#DF494E',}} bold>Date: 5 June, 2020</Text> {"\n"}Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
-
           </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("AbsentDetails")}>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
+          <Text  caption   style={styles.portfolio}><Text style={{color:'#DF494E',}} bold>Date: 5 June, 2020</Text> {"\n"}Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
-
           </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("AbsentDetails")}>
           <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
+          <Text  caption   style={styles.portfolio}><Text style={{color:'#DF494E',}} bold>Date: 5 June, 2020</Text> {"\n"}Student is recorded as absent. 
               Please call the school or submit absent letter.</Text>
-
-          </Card> 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
-              Please call the school or submit absent letter.</Text>
-
-          </Card> 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
-              Please call the school or submit absent letter.</Text>
-
-          </Card> 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
-              Please call the school or submit absent letter.</Text>
-
-          </Card> 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
-              Please call the school or submit absent letter.</Text>
-
-          </Card> 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text  caption   style={styles.portfolio}><Text bold>2020/05/20-</Text> Student is recorded as absent. 
-              Please call the school or submit absent letter.</Text>
-
           </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("AbsentDetails")}>
+          <Card style={styles.cardstyle} left middle shadow>
+             <Text  caption   style={styles.portfolio}><Text style={{color:'#DF494E',}} bold>Date: 5 June, 2020</Text> {"\n"}Student is recorded as absent. 
+              Please call the school or submit absent letter.</Text>
+          </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("AbsentDetails")}>
+          <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption   style={styles.portfolio}><Text style={{color:'#DF494E',}} bold>Date: 5 June, 2020</Text> {"\n"}Student is recorded as absent. 
+              Please call the school or submit absent letter.</Text>
+          </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("AbsentDetails")}>
+          <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption   style={styles.portfolio}><Text style={{color:'#DF494E',}} bold>Date: 5 June, 2020</Text> {"\n"}Student is recorded as absent. 
+              Please call the school or submit absent letter.</Text>
+          </Card>
+        </TouchableOpacity>
+
+
+
              
       </ScrollView>
     );
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
     margin: 10
   },
   portfolio: {
-    fontSize: 16,
+    fontSize: width/28,
   },
   shadow: {
     shadowColor: 'black',
@@ -132,9 +133,8 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   cardstyle: {
-      margin:15,
+      margin:width/95,
       backgroundColor: "#eff7f4",
-      borderRadius:15,
   },
   
   lineStyle:{

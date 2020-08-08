@@ -78,25 +78,21 @@ export default class Login extends Component {
         <Card style={styles.cardstyle}>  
 
         <Block style= {styles.logoblock}> 
-   
          <Image  style= {styles.logoimage} source={require('../assets/loginicon.png')}
          />     
+         <Text style= {styles.loginText} h1 center>Forgot Password ?? </Text>   
+    <Text>{"\n"}</Text>
           </Block>
 
         <Block padding={[0, theme.sizes.base * 0.6]}>
           <Block middle>
-         
-
-            <Input  
+             <Input  
               placeholder="Phone Number"
               placeholderTextColor="gray"
               error={hasErrors("phone_number")}
               style={[styles.textInput, hasErrors("phone_number")]}
               onChangeText={text => this.setState({ phone_number: text })}
             />
-
-          
-           
             <Text>{"\n"}</Text>
 
             <Button  style={styles.loginbutton} gradient >
@@ -118,7 +114,8 @@ export default class Login extends Component {
           gray
           caption
           center
-          style={{fontSize:19,}}
+          bold
+          style={{fontSize:15,}}
           
         >
           {"\n"}
@@ -144,18 +141,15 @@ const styles = StyleSheet.create({
   logoblock: {
     justifyContent: 'center',
         alignItems: 'center', 
-        
   },
   logoimage: {
-        width: width * 0.4, 
-        height: width * 0.5 * 0.7,
-        
+        width: width * 0.3, 
+        height: width * 0.5 * 0.5,
   },
 
   loginbutton: {
-  
-    borderRadius: 25,
-    margin:5,
+    borderRadius: width/20,
+    margin:1,
   },
   
   textInput: {
@@ -192,7 +186,9 @@ image: {
   resizeMode: "cover",
   justifyContent: "center",
 },
-
+loginText: {
+  fontSize: width/20,
+},
 
   hasErrors: {
     borderBottomColor: theme.colors.accent

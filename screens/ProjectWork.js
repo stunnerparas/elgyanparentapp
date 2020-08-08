@@ -16,7 +16,7 @@ import { theme, mocks } from "../constants";
 
 const { width, height } = Dimensions.get("window");
 
-export default class ProjectWork extends Component {
+export default class Homework extends Component {
   state = {
    
   };
@@ -40,7 +40,6 @@ export default class ProjectWork extends Component {
   });
 
 
-
   render() {
     const { profile, navigation } = this.props;
 
@@ -51,17 +50,84 @@ export default class ProjectWork extends Component {
           
             
         <View style={styles.Container}>
-        <Image source={require('../assets/elements/project.png')} />
-        <Text h2 center light>
-            Project Work 
+        
+        <Text style={styles.pageheader} h2 center light>
+            List of project Works
           </Text>
         </View>
 
         <TouchableOpacity onPress={() => navigation.navigate("ProjectDetails")}>
-          <Card style={styles.cardstyle} left middle shadow>
-    <Text  caption gray2  style={styles.portfolio}><Text bold>05/20,Science,{"\n"}Title of the project work:-{"\n"}</Text>
-               Students should do the research and make make the report of...</Text>
-          </Card>
+        <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption bold style={styles.header}>Date: 17 July, 2020</Text>
+              <Text  caption bold style={styles.notificationtitle}>Subject: Science</Text>
+              <Text  caption  style={styles.aboutus}>
+              Students should write the question answer of Chapter 1 and also complete the numerical of...
+              </Text>
+          </Card>  
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate("ProjectDetails")}>
+        <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption bold style={styles.header}>Date: 17 July, 2020</Text>
+              <Text  caption bold style={styles.notificationtitle}>Subject: Science</Text>
+              <Text  caption  style={styles.aboutus}>
+              Students should write the question answer of Chapter 1 and also complete the numerical of...
+              </Text>
+          </Card>  
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ProjectDetails")}>
+        <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption bold style={styles.header}>Date: 17 July, 2020</Text>
+              <Text  caption bold style={styles.notificationtitle}>Subject: Science</Text>
+              <Text  caption  style={styles.aboutus}>
+              Students should write the question answer of Chapter 1 and also complete the numerical of...
+              </Text>
+          </Card>  
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ProjectDetails")}>
+        <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption bold style={styles.header}>Date: 17 July, 2020</Text>
+              <Text  caption bold style={styles.notificationtitle}>Subject: Science</Text>
+              <Text  caption  style={styles.aboutus}>
+              Students should write the question answer of Chapter 1 and also complete the numerical of...
+              </Text>
+          </Card>  
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ProjectDetails")}>
+        <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption bold style={styles.header}>Date: 17 July, 2020</Text>
+              <Text  caption bold style={styles.notificationtitle}>Subject: Science</Text>
+              <Text  caption  style={styles.aboutus}>
+              Students should write the question answer of Chapter 1 and also complete the numerical of...
+              </Text>
+          </Card>  
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ProjectDetails")}>
+        <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption bold style={styles.header}>Date: 17 July, 2020</Text>
+              <Text  caption bold style={styles.notificationtitle}>Subject: Science</Text>
+              <Text  caption  style={styles.aboutus}>
+              Students should write the question answer of Chapter 1 and also complete the numerical of...
+              </Text>
+          </Card>  
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ProjectDetails")}>
+        <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption bold style={styles.header}>Date: 17 July, 2020</Text>
+              <Text  caption bold style={styles.notificationtitle}>Subject: Science</Text>
+              <Text  caption  style={styles.aboutus}>
+              Students should write the question answer of Chapter 1 and also complete the numerical of...
+              </Text>
+          </Card>  
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ProjectDetails")}>
+        <Card style={styles.cardstyle} left middle shadow>
+          <Text  caption bold style={styles.header}>Date: 17 July, 2020</Text>
+              <Text  caption bold style={styles.notificationtitle}>Subject: Science</Text>
+              <Text  caption  style={styles.aboutus}>
+              Students should write the question answer of Chapter 1 and also complete the numerical of...
+              </Text>
+          </Card>  
         </TouchableOpacity>
 
           
@@ -73,6 +139,7 @@ export default class ProjectWork extends Component {
     );
   }
 }
+
 
 
 const styles = StyleSheet.create({
@@ -91,7 +158,7 @@ const styles = StyleSheet.create({
     margin: 10
   },
   portfolio: {
-    fontSize: 18,
+    fontSize: 16,
   },
   shadow: {
     shadowColor: 'black',
@@ -100,19 +167,39 @@ const styles = StyleSheet.create({
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
   },
-  cardstyle: {
-      margin:15,
-      backgroundColor: "#eff7f4",
-      borderRadius:15,
-
-
+  header: {
+    fontSize: width/30,
+    margin:3,
+    color:'#DF494E',
   },
+  aboutus: {
+    fontSize: width/28,
+    margin:5,
+    textAlign: 'justify',
+    lineHeight:25,
+  },
+  cardstyle: {
+    margin:0,
+    backgroundColor: "#eff7f4",
+
+
+},
   
   lineStyle:{
     borderWidth: 0.2,
     borderColor:'black',
     margin:10,
+
     
+  },
+  notificationtitle: {
+    fontSize: width/28,
+    margin:2,
+    textAlign: 'justify',
+    lineHeight:25,
+  },
+  pageheader:{
+    fontSize: width/23,
   },
 
 

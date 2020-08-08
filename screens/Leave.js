@@ -22,7 +22,7 @@ const VALID_EMAIL = "contact@react-ui-kit.com";
 const VALID_PASSWORD = "subscribe";
 
 
-export default class Login extends Component {
+export default class Leave extends Component {
   state = {
     email: VALID_EMAIL,
     password: VALID_PASSWORD,
@@ -31,7 +31,7 @@ export default class Login extends Component {
   };
   
   static navigationOptions = () => ({
-    title: 'Suggestion',
+    title: 'Leave Details',
     headerTintColor: 'white',
     headerStyle: {
       backgroundColor: '#2BDA8E'
@@ -59,13 +59,16 @@ export default class Login extends Component {
 
     return (
       <ScrollView style={{ marginVertical: theme.sizes.padding,backgroundColor: "#eff7f4" }} >
+
+       
+
       <KeyboardAvoidingView style={styles.login} >
       
         <Card style={styles.cardstyle}>  
 
         <Block style= {styles.logoblock}> 
            
-         <Text h1  style={styles.pageheader} center>Any Suggestion ?{"\n"}</Text>   
+         <Text h1 center>Leave Detail !{"\n"}{"\n"}</Text>   
           </Block>
 
         <Block padding={[0, theme.sizes.base * 0.6]}>
@@ -77,11 +80,12 @@ export default class Login extends Component {
               style={[styles.textInput, hasErrors("email")]}
               onChangeText={text => this.setState({ email: text })}
             />
+            <Text>{"\n"}</Text>
   
           <View style={styles.textAreaContainer} >
             <TextInput
               style={styles.textArea}
-              placeholder="  Write Something..."
+              placeholder="  Please mention the detail of leave......."
               placeholderTextColor="gray"
               numberOfLines={6}
               multiline={true}
@@ -137,7 +141,7 @@ const styles = StyleSheet.create({
   loginbutton: {
   
     borderRadius: 25,
-    margin:1,
+    margin:5,
   },
   
   textInput: {
@@ -185,9 +189,6 @@ image: {
   flex: 1,
   resizeMode: "cover",
   justifyContent: "center",
-},
-pageheader:{
-  fontSize: width/23,
 },
 
 

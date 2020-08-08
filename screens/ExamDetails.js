@@ -53,7 +53,7 @@ export default class ExamDetails extends Component {
             
         <View style={styles.Container}>
         <Image source={require('../assets/elements/exam.png')} />
-        <Text h2 center light>
+        <Text style={styles.pageheader} h2 center light>
             Exam Routine of Class name
             {"\n"}
           </Text>
@@ -142,7 +142,9 @@ const styles = StyleSheet.create({
   time:{
     color:'#DC143C',
 },
-
+pageheader:{
+  fontSize: width/23,
+},
 
 
   text: {

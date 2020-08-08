@@ -49,9 +49,8 @@ export default class Result extends Component {
       <ScrollView showsVerticalScrollIndicator={false}>
           
           <View style={styles.Container}>
-          <Image source={require('../assets/elements/progress.png')} />
           <Text h2 center light>
-            Results
+            {"\n"}
           </Text>
           </View>
 
@@ -146,19 +145,14 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10
   },
-  time:{
-    color:'green',
-    fontSize: 15,
-  },
+
 
   text: {
     fontSize: 22,
     textAlign: 'center',
     margin: 10
   },
-  text2: {
-    fontSize: 17,
-  },
+
   text3: {
     fontSize: 18,
   },
@@ -171,11 +165,21 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   cardstyle: {
-      margin:15,
-      backgroundColor: "#eff7f4",
-      borderRadius:15,
+    margin:3,
+    backgroundColor: "#eff7f4",
+    borderRadius:15,
 
-  },
+
+},
+time:{
+  color:'green',
+  fontSize: width/30,
+},
+
+text2: {
+  fontSize: width/25,
+},
+
   
   lineStyle:{
     borderWidth: 0.2,

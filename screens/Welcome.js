@@ -183,7 +183,7 @@ class Welcome extends Component {
           <Image
             source={item.source}
             resizeMode="contain"
-            style={{ width, height: height / 2.8, overflow: "visible" }}
+            style={{ width, height: height / 3, overflow: "visible" }}
           />
         )}
         onScroll={Animated.event([
@@ -230,28 +230,27 @@ class Welcome extends Component {
       
         <Block center middle>
         <Text h1 center>{"\n"}</Text>  
-        <Text h1 center>Welcome !{"\n"}</Text>   
+        <Text h1 center>Welcome {"\n"}</Text>   
  
           {this.renderIllustrations()}
         </Block>
-        <Block middle flex={0.9} margin={[0, theme.sizes.padding * 3]}>
+        <Block middle flex={0.5} margin={[0, theme.sizes.padding * 1.5]}>
           <Button style={styles.button} gradient onPress={() => navigation.navigate("Login")}>
           <Text
-               white
+                 white
                 caption
                 center
-                style={{fontSize:17,}}
+                style={{fontSize:width/30,}}
               >
-             Let's Get Started !  >>
+             Let's Get Started  >>
             </Text>
           </Button>
-         <Text>{"\n"}</Text>
           <Button style={styles.button} onPress={() => this.setState({ showTerms: true })}>
           <Text
                 gray
                 caption
                 center
-                style={{fontSize:17,}}
+                style={{fontSize:width/30,}}
                 
               >
               Terms Of Service
@@ -296,9 +295,9 @@ const styles = StyleSheet.create({
   },
   button: {
   
-    borderRadius: 25,
+    borderRadius: width/10,
     shadowOpacity: 1,
-    elevation:6,
+    elevation:2,
   },
 
   

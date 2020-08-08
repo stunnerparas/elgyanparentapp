@@ -53,7 +53,7 @@ export default class DueDetails extends Component {
 
         <Image source={require('../assets/elements/bus.png')} />
         <Text h2 center light>
-            Bus Details 
+            Bus Assigned 
           </Text>
 
         </View>
@@ -69,7 +69,7 @@ export default class DueDetails extends Component {
            <Text  caption right  style={styles.style2}>{"\n"}</Text>
 
 
-          <Text center caption bold style={styles.header2}>Active Bus </Text>
+          <Text center caption bold style={styles.pageheader}>Active Bus</Text>
 
           <TouchableOpacity onPress={() => navigation.navigate("BusRoute")}>
           <Card style={styles.cardstyle} left middle shadow>
@@ -146,21 +146,21 @@ const styles = StyleSheet.create({
     margin: 10
   },
   style1: {
-    fontSize: 19,
+    fontSize: width/21,
     margin:5,
   },
   style1: {
-    fontSize: 19,
-    margin:5,
+    fontSize: width/24,
+    margin:2,
   },
   style2: {
-    fontSize: 19,
+    fontSize: width/28,
     margin:5,
   },
   
   header: {
-    fontSize: 19,
-    margin:5,
+    fontSize: width/24,
+    margin:2,
   },
   header2: {
     fontSize: 19,
@@ -175,15 +175,18 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   cardstyle: {
-      margin:15,
+      margin:7,
       backgroundColor: "#eff7f4",
       borderRadius:15,
   },
   route: {
-    fontSize: 19,
+    fontSize: width/24,
     margin:5,
 
    },
+   pageheader:{
+    fontSize: width/23,
+  },
 
 
 

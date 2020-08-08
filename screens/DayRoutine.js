@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
   SafeAreaView,
   View,
+  
 } from "react-native";
-
+import { DataTable } from 'react-native-paper';
 
 
 import { Card, Badge, Button, Block, Text } from "../components";
@@ -32,7 +33,7 @@ export default class DayRoutine extends Component {
   };
 
   static navigationOptions = () => ({
-    title: 'Day Routine',
+    title: 'Class Routine',
     headerTintColor: 'white',
     headerStyle: {
       backgroundColor: '#2BDA8E'
@@ -48,48 +49,68 @@ export default class DayRoutine extends Component {
       
       <ScrollView showsVerticalScrollIndicator={false}>
           
-          <View style={styles.Container}>
-          <Image source={require('../assets/elements/routine.png')} />
-          <Text h2 center light>
-            Day Name
+          
+            
+        <View style={styles.Container}>
+        <Text style={styles.header} h2 center light>
+            Sunday Class Routine
+            
           </Text>
-          </View>
+        </View>
+   <Card gradient style={styles.cardstyle} left middle shadow>
+        <DataTable>
+        <DataTable.Header >
+          <DataTable.Title ><Text style={styles.tableHeaderStyle}>Subject</Text></DataTable.Title>
+          <DataTable.Title numeric><Text style={styles.tableHeaderStyle}>Teacher</Text></DataTable.Title>
+          <DataTable.Title numeric><Text style={styles.tableHeaderStyle}>Time</Text></DataTable.Title>
+        </DataTable.Header>
 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text style={styles.text2}>Science </Text>
-              <Text gray2 style={styles.text3}>Teacher Name </Text>
-          </Card>
-          
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text style={styles.text2}>Math </Text>
-              <Text gray2 style={styles.text3}>Teacher Name </Text>
-          </Card>
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Math</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text style={styles.text2}>Nepali </Text>
-              <Text gray2 style={styles.text3}>Teacher Name </Text>
-          </Card>
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Social</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text style={styles.text2}>EPH </Text>
-              <Text gray2 style={styles.text3}>Teacher Name </Text>
-          </Card>
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Science</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text style={styles.text2}>OPT Math </Text>
-              <Text gray2 style={styles.text3}>Teacher Name </Text>
-          </Card>
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>EPH</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text style={styles.text2}>Accountancy </Text>
-              <Text gray2 style={styles.text3}>Teacher Name </Text>
-          </Card>
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Nepali</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
 
-          <Card style={styles.cardstyle} left middle shadow>
-              <Text style={styles.text2}>English </Text>
-              <Text gray2 style={styles.text3}>Teacher Name </Text>
-          </Card>
-          
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>English</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+        <DataTable.Row>
+          <DataTable.Cell><Text style={styles.subject}>Accountancy</Text></DataTable.Cell>
+          <DataTable.Cell numeric>Paras Dahal</DataTable.Cell>
+          <DataTable.Cell numeric><Text style={styles.time}>9:30-12:30</Text></DataTable.Cell>
+        </DataTable.Row>
+
+
+       </DataTable>
+    </Card>
+         
                     
       </ScrollView>
     );
@@ -105,41 +126,39 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10
   },
+  tableHeaderStyle:{
+   fontSize:width/27,
+  },
+  subject:{
+     
+      color:'green',
+  },
+  time:{
+    color:'#DC143C',
+},
 
 
 
   text: {
-    fontSize: 22,
+    fontSize: 25,
     textAlign: 'center',
-    margin: 30
+    margin: 10
   },
-  text2: {
-    fontSize: 20,
+  header: {
+    fontSize: width/23,
+    margin:2,
   },
-  text3: {
-    fontSize: 14,
-    color:'green',
-  },
-
-  shadow: {
-    shadowColor: 'black',
-    shadowOpacity: 5,
-    elevation:3,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
-  },
+ 
   cardstyle: {
-      margin:15,
+      margin:10,
       backgroundColor: "#eff7f4",
       borderRadius:15,
+
+
   },
   
-  lineStyle:{
-    borderWidth: 0.2,
-    borderColor:'black',
-    margin:10,
-    
-  },
+  
+
 
 
 });

@@ -47,25 +47,18 @@ export default class DueDetails extends Component {
       
       <ScrollView showsVerticalScrollIndicator={false}>
           
-          
-            
-        <View style={styles.Container}>
-        <Image source={require('../assets/elements/dues.png')} />
-        <Text h2 center light>
-            Due Details 
-          </Text>
-        </View>
+ 
 
         <Card style={styles.cardstyle} left middle shadow>
               <Text caption bold style={styles.header}>Robert Downy Jr.</Text>
               <Text bold caption  style={styles.style1}>Previous Due: Rs. 4000 </Text>
-              <Text bold caption  style={styles.style1}>Remaining Due: Rs. 4000 </Text>
-              <Text  caption right  style={styles.style2}>Due Date: 2020/07/12  </Text>
+              <Text bold caption  style={styles.style1}>Remaining Total: Rs. 4000 </Text>
+              <Text  caption right  style={styles.duedate}>Due Date: 2020/07/12  </Text>
           </Card>   
-             <Text  caption right  style={styles.style2}>{"\n"}</Text>
+             <Text  caption right >{"\n"}</Text>
 
 
-          <Text center caption bold style={styles.header2}>Transaction History</Text>
+          <Text center caption bold style={styles.pageheader}>Transaction History</Text>
           <Card style={styles.cardstyle} left middle shadow>
               <Text  caption  style={styles.style1}>
                 Due Payment has been made on 2020/07/28. 
@@ -136,21 +129,19 @@ const styles = StyleSheet.create({
     margin: 10
   },
   style1: {
-    fontSize: 19,
-    margin:5,
-  },
-  style1: {
-    fontSize: 19,
-    margin:5,
+    fontSize: width/23,
+    margin:1,
+    
   },
   style2: {
-    fontSize: 19,
+    fontSize: width/27,
     margin:5,
+    
   },
   
   header: {
-    fontSize: 19,
-    margin:5,
+    fontSize: width/20,
+    margin:1,
   },
   header2: {
     fontSize: 19,
@@ -165,12 +156,18 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   cardstyle: {
-      margin:15,
+      margin:2,
       backgroundColor: "#eff7f4",
-      borderRadius:20,
       
-
   },
+  pageheader:{
+    fontSize: width/23,
+  },
+  duedate:{
+    color:'#DC143C',
+    fontSize: width/27,
+    margin:5,
+  }
 
 
 

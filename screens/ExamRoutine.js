@@ -49,8 +49,7 @@ export default class ExamRoutine extends Component {
       <ScrollView showsVerticalScrollIndicator={false}>
           
           <View style={styles.Container}>
-          <Image source={require('../assets/elements/exam.png')} />
-          <Text h2 center light>
+          <Text style={styles.pageheader} h2 center light>
             Exam Routine
           </Text>
           </View>
@@ -116,19 +115,13 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10
   },
-  time:{
-    color:'green',
-    fontSize: 15,
-  },
 
   text: {
     fontSize: 22,
     textAlign: 'center',
     margin: 10
   },
-  text2: {
-    fontSize: 17,
-  },
+
   text3: {
     fontSize: 18,
   },
@@ -141,11 +134,19 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   cardstyle: {
-      margin:15,
+      margin:3,
       backgroundColor: "#eff7f4",
       borderRadius:15,
 
 
+  },
+  time:{
+    color:'green',
+    fontSize: width/30,
+  },
+
+  text2: {
+    fontSize: width/25,
   },
   
   lineStyle:{
@@ -154,6 +155,10 @@ const styles = StyleSheet.create({
     margin:10,
     
   },
+  pageheader:{
+    fontSize: width/23,
+  },
+
 
 
 });

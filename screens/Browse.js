@@ -71,16 +71,26 @@ class Browse extends Component {
 
                 <Card center middle shadow style={styles.category}>
                
-                    <Image source={require('../assets/elements/attendance.png')} />
+                    <Image style={styles.category_image} source={require('../assets/elements/attendance.png')} />
                   <Text  height={20}>
                     Attendance
+                  </Text>
+                </Card>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => navigation.navigate("Notification")}>
+
+                <Card center middle shadow style={styles.category}>
+               
+                    <Image  source={require('../assets/elements/notification.png')} />
+                  <Text  height={20}>
+                    Notification
                   </Text>
                 </Card>
               </TouchableOpacity>
               
               <TouchableOpacity onPress={() => navigation.navigate("ClassRoutine")}>
                 <Card center middle shadow style={styles.category}>
-               
                     <Image source={require('../assets/elements/routine.png')} />
                   <Text  height={20}>
                     Class Routine
@@ -228,9 +238,9 @@ const styles = StyleSheet.create({
   },
 
   circleImageLayout: {
-    width: 90,
-    height: 90,
-    borderRadius: 200 / 2
+    width: width/5,
+    height: width/5,
+    borderRadius: 200 / 2,
   },
 
   lineStyle:{
@@ -257,9 +267,12 @@ const styles = StyleSheet.create({
     
   },
   text: {
-    fontSize: 15,
+    fontSize: width/30,
     textAlign: 'center',
     margin: 10
+  },
+  category_image:{
+   height:width/9,
   },
   
 
@@ -267,7 +280,8 @@ const styles = StyleSheet.create({
     // this should be dynamic based on screen width
     minWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
     maxWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
-    maxHeight: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
+    maxHeight: (width - theme.sizes.padding *2.4 - theme.sizes.base) / 2,
+    height:width/4,
     
   }
 });

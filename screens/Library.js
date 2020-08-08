@@ -50,9 +50,9 @@ export default class Library extends Component {
           
             
         <View style={styles.Container}>
-          <Image source={require('../assets/elements/library.png')} />
-          <Text h2 center light>
-            Library
+          <Text style={styles.pageheader} h2 center light>
+            {"\n"}
+            Borrowed and Returned Books
           </Text>
         </View>
 
@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
     margin: 10
   },
   portfolio: {
-    fontSize: 17,
-    margin: 5,
+    fontSize: width/24,
+    margin: 2,
   },
   shadow: {
     shadowColor: 'black',
@@ -119,12 +119,13 @@ const styles = StyleSheet.create({
     
   },
   borrowcardstyle: {
-      margin:15,
-      backgroundColor: "#eff7f4",
-      borderRadius:15,
+    margin:3,
+    backgroundColor: "#eff7f4",
+    borderRadius:15,
   },
   returncardstyle: {
-    margin:15,
+    margin:3,
+    borderRadius:15,
 },
   
   lineStyle:{
@@ -133,6 +134,24 @@ const styles = StyleSheet.create({
     margin:10,
     
   },
+  cardstyle: {
+    margin:3,
+    backgroundColor: "#eff7f4",
+    borderRadius:15,
+
+
+},
+time:{
+  color:'green',
+  fontSize: width/30,
+},
+
+text2: {
+  fontSize: width/25,
+},
+pageheader:{
+  fontSize: width/23,
+},
   
 
 
